@@ -88,12 +88,23 @@ WSGI_APPLICATION = 'stock_management_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import dj_database_url
+import os
+
+import os
+import dj_database_url
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'MPQedYrRJazBvCYNDkAUQGvzmvPcINht',
+        'HOST': 'autorack.proxy.rlwy.net',
+        'PORT': '10001',
     }
 }
+
 
 
 # Password validation

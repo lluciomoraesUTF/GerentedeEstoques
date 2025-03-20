@@ -1,0 +1,62 @@
+h1,
+h2 {
+  color: var(--primary-color); /* Verde metálico */
+  text-align: center;
+}
+
+:root {
+  --primary-color: #00ff6a; /* Verde metálico */
+  --secondary-color: #000000; /* Preto */
+  --accent-color: #ff4757; /* Vermelho vibrante */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #c0392b; /* Vermelho mais escuro */
+}
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--primary-color);
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+td {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}

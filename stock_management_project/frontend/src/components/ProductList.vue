@@ -1,21 +1,24 @@
 <template>
-  <div>
+  <div style="text-align: center">
     <h1>Lista de Produtos</h1>
-    <button @click="$router.push('/products/new')">Adicionar Produto</button>
-    <table>
+    <button @click="$router.push('/products/create')">Adicionar Produto</button>
+    <table style="margin: 20px auto; border-collapse: collapse">
       <thead>
         <tr>
-          <th>Nome</th>
-          <th>Preço</th>
-          <th>Ações</th>
+          <th style="padding: 10px; border: 1px solid #ddd">Nome</th>
+          <th style="padding: 10px; border: 1px solid #ddd">Preço</th>
+          <th style="padding: 10px; border: 1px solid #ddd">Ações</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="product in products" :key="product.id">
-          <td>{{ product.name }}</td>
-          <td>{{ product.price }}</td>
-          <td>
-            <button @click="viewProduct(product.id)">Detalhes</button>
+          <td style="padding: 10px; border: 1px solid #ddd">
+            {{ product.name }}
+          </td>
+          <td style="padding: 10px; border: 1px solid #ddd">
+            R$ {{ product.price.toFixed(2) }}
+          </td>
+          <td style="padding: 10px; border: 1px solid #ddd">
             <button @click="editProduct(product.id)">Editar</button>
             <button @click="deleteProduct(product.id)">Deletar</button>
           </td>
@@ -28,7 +31,7 @@
 <script>
 import ProductService from "../services/ProductService";
 
-export default  {
+export default {
   name: "ProductList",
   data() {
     return {
@@ -44,11 +47,8 @@ export default  {
         console.error("Erro ao buscar produtos:", error);
       }
     },
-    viewProduct(id) {
-      this.$router.push(`/products/${id}`);
-    },
     editProduct(id) {
-      this.$router.push(`/products/${id}/edit`);
+      this.$router.push(`/products/edit/${id}`);
     },
     async deleteProduct(id) {
       try {
@@ -66,5 +66,15 @@ export default  {
 </script>
 
 <style>
-/* Estilos básicos */
+/* Estilo básico para centralização */
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+table {
+  width: 50%;
+}
+button {
+  margin: 5px;
+}
 </style>
